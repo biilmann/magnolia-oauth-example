@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+  <title>Minimal example of asking for access tokens via Netlify's OAuth2 API</title>
+  <link rel="stylesheet" href="/styles.css"/>
+</head>
+<body>
+  <h1>This is a simple example of a "deploy to Netlify" flow</h1>
+
+  <div id="step-1" class="step">
+    <h2>Step 1: Register your OAuth App</h2>
+
+    <p>
+      Start by going to <a href="https://app.netlify.com/applications" target="_blank">https://app.netlify.com/applications</a>
+      and create a new OAuth Application.
+    </p>
+    <p>
+      Make sure you enter <div id="current-url"></div> as the <strong>Redirect URI</strong> for your new app.
+    </p>
+    <p>
+      Once your're done, enter the Client ID of your new application here:
+      <form id="client-id-form">
+        <input id="client-id" type="text" placeholder="Client ID"/>
+
+        <p>
+          The site we're creating will also need a MAGNOLIA_API_TOKEN environment variable.
+          Set the value of that token here before clicking the link below
+          (it doesn't need to be a valid token for the purpose of this demo).
+        </p>
+
+        <input id="magnolia-token" placeholder="Magnolia API Token" type="text">
+
+        <button>Submit</button>
+      </form>
+    </p>
+  </div>
+
+  <div id="step-2" class="step">
+    <h2>Step 2: Create a new site with Netlify</h2>
+
+    <p>
+      <a id="auth-url" href="#"><img src="https://www.netlify.com/img/deploy/button.svg"></a>
+    </p>
+  </div>
+
+  <div id="step-3" class="step">
+    <h2>Step 3: Make API calls</h2>
+
+    <p id="output">Loading sites for this user...</p>
+  </div>
+
+  <br>
+
+  <p>Source code: <a target="_blank" href="https://github.com/biilmann/magnolia-oauth-example">github.com/biilmann/magnolia-oauth-example</a></p>
+
+  <script src="/app.js"></script>
+</body>
+</html>
